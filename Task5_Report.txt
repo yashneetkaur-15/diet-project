@@ -1,0 +1,18 @@
+﻿Task 5: Enhancement Research & Implementation
+
+Chosen Enhancements:
+1) Multi-stage Docker builds to reduce image size and improve deployment efficiency.
+2) Data processing optimization to reduce runtime and memory usage during analysis.
+
+Research Conducted:
+I reviewed Docker best practices and learned that multi-stage builds separate dependency building from the final runtime container. This reduces the final image size and avoids unnecessary build artifacts. I also reviewed common Pandas optimization practices such as loading only required columns, using efficient data types, and avoiding slow loops to improve performance on large datasets.
+
+Improvements Applied:
+1) I replaced my single-stage Dockerfile with a two-stage multi-stage build where dependencies are built as wheels in the first stage and installed in the runtime stage.
+2) I measured runtime locally and ensured the analysis uses efficient Pandas operations.
+
+Impact / Expected Benefits:
+Smaller Docker images reduce build time, storage use, and improve CI/CD speed. Faster processing improves scalability and reliability.
+
+Evidence Included:
+GitHub Actions Docker build logs + local Measure-Command timing screenshot.
