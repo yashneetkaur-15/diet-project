@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+_figsave_i = 1
+
 import os
 os.makedirs('outputs', exist_ok=True)
 import seaborn as sns
@@ -42,6 +44,9 @@ plt.ylabel("Protein (g)")
 plt.tight_layout()
 plt.tight_layout()
 plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{_figsave_i}.png', dpi=200)
+_figsave_i += 1
 plt.show()
 
 plt.figure(figsize=(10, 6))
@@ -49,6 +54,9 @@ sns.heatmap(avg_macros, annot=True, cmap="coolwarm")
 plt.title("Macronutrient Distribution by Diet Type")
 plt.tight_layout()
 plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{_figsave_i}.png', dpi=200)
+_figsave_i += 1
 plt.show()
 
 plt.figure(figsize=(10, 6))
@@ -63,4 +71,7 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.tight_layout()
 plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{_figsave_i}.png', dpi=200)
+_figsave_i += 1
 plt.show()
