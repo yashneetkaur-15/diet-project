@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+os.makedirs('outputs', exist_ok=True)
 import seaborn as sns
 
 df = pd.read_csv("All_Diets.csv")
@@ -38,11 +40,15 @@ plt.title("Average Protein by Diet Type")
 plt.xticks(rotation=45)
 plt.ylabel("Protein (g)")
 plt.tight_layout()
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
 plt.show()
 
 plt.figure(figsize=(10, 6))
 sns.heatmap(avg_macros, annot=True, cmap="coolwarm")
 plt.title("Macronutrient Distribution by Diet Type")
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
 plt.show()
 
 plt.figure(figsize=(10, 6))
@@ -55,4 +61,6 @@ sns.scatterplot(
 plt.title("Top Protein-Rich Recipes by Cuisine")
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
+plt.tight_layout()
+plt.savefig(f'outputs/figure_{plt.gcf().number}.png', dpi=200)
 plt.show()
